@@ -1,3 +1,9 @@
+# For Nodejs
+
+node_modules
+
+# For Django
+
 # Python bytecode
 __pycache__/
 *.py[cod]
