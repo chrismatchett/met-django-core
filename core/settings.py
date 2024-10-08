@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'compressor',
     'compressor_toolkit',
-    'recipe'
+    'events'
 ]
 
 MIDDLEWARE = [
