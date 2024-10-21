@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'compressor',
     'compressor_toolkit',
-    'events'
+    'django_vite_plugin',
+    'react'
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,44 +133,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent # Serve media files in develop
 MEDIA_URL = '/media/'  # URL to serve media files
 MEDIA_ROOT = BASE_DIR / 'media'  # Directory where uploaded files will be stored
 
-# React and django_compressor
+# React and Vite
 
-# Static files finders (including for django-compressor)
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
-]
-
-COMPRESS_ENABLED = True
-COMPRESS_ROOT = BASE_DIR / 'compressed'
-
-COMPRESS_CSS_FILTERS = [
-    'compressor.filters.css_default.CssAbsoluteFilter',
-    'compressor.filters.cssmin.CSSMinFilter',
-]
-COMPRESS_JS_FILTERS = [
-    'compressor.filters.jsmin.JSMinFilter',
-]
-
-
-
-# STATICFILES_FINDERS += (
-#     'compressor.finders.CompressorFinder',
-# )
-
-# COMPRESS_CSS_FILTERS = [
-#     'compressor.filters.css_default.CssAbsoluteFilter',
-#     'compressor.filters.cssmin.CSSMinFilter',
-#     'compressor.filters.template.TemplateFilter'
-# ]
-# COMPRESS_JS_FILTERS = [
-#     'compressor.filters.jsmin.JSMinFilter',
-# ]
-# COMPRESS_PRECOMPILERS = (
-#     ('module', 'compressor_toolkit.precompilers.ES6Compiler'),
-#     ('css', 'compressor_toolkit.precompilers.SCSSCompiler'),
-# )
-# COMPRESS_ENABLED = True
+DJANGO_VITE_PLUGIN = {
+    "BUILD_DIR": "staticfiles/build",
+    "BUILD_URL_PREFIX": "/" + STATIC_URL + "build",
+    "DEV_MODE": True,
+}

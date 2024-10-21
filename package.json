@@ -1,22 +1,31 @@
 {
-  "name": "react-app",
+  "name": "met-django-core-react",
   "version": "1.0.0",
-  "description": "A basic react app for Django",
+  "type": "module",
+  "description": "Example of how to integrate React with Django",
   "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "django-vite-plugin": "^4.0.4",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.9"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrismatchett/met-django-core.git"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "babel-preset-es2015-script": "^1.1.0",
-    "babelify": "^10.0.0",
-    "browserify": "^17.0.1",
-    "postcss-cli": "^11.0.0",
-    "sass-embedded": "^1.79.4"
+  "bugs": {
+    "url": "https://github.com/chrismatchett/met-django-core/issues"
   },
-  "dependencies": {
-    "react-app": "file:"
-  }
+  "homepage": "https://github.com/chrismatchett/met-django-core#readme"
 }
