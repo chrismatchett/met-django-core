@@ -5,7 +5,7 @@ import djangoVite from "django-vite-plugin";
 export default defineConfig({
   plugins: [
     djangoVite({
-      input: ["./static/js/main.js", "./static/styles/tailwind.css"],
+      input: ["./static/js/main.js", "./static/css/tailwind.css"],
     }),
   ],
 });
