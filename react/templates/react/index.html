@@ -1,16 +1,15 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/static/dist/assets/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <script type="module" crossorigin src="{% static 'dist/assets/index-BLvcXRAk.js' %}"></script>
-    <link rel="stylesheet" crossorigin href="{% static 'dist/assets/index-BfibREyH.css' %}">
-  </head>
-  <body>
-    <h1>App</h1>
-    <div id="app"></div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django App with Vite</title>
+    <link rel="stylesheet" href="{% static 'dist/assets/styles.css' %}">
+</head>
+<body>
+    <div id="app"></div> <!-- This is where your Vite app will render -->
+    
+    <script type="module" src="{% static 'dist/assets/index-BLvcXRAk.js' %}"></script> <!-- Ensure this path is correct -->
+</body>
 </html>
