@@ -15,7 +15,7 @@ npm run dev
 ## Tailwind
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer django-vite-plugin
+npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init
 ```
 
